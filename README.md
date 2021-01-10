@@ -13,7 +13,7 @@ Nethra Gunti - S20180010061 / nethra.g18@iiits.in
 GitHub Repo Link
 ------------------------------
 
-https://github.com/NethraGunti/IR-System-on-Historical-Domain
+https://github.com/stoic-signs/IR-System-on-Historical-Domain
 
 ------------------------------
 Drive Link For the Dataset
