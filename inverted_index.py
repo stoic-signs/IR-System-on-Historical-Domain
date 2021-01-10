@@ -1,3 +1,7 @@
+from collections import OrderedDict
+from nltk.corpus import wordnet
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
 import os
 import re
 import sys
@@ -6,10 +10,6 @@ import math
 import json
 import nltk
 nltk.download('stopwords')
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import wordnet
-from collections import OrderedDict
 lemmatizer = WordNetLemmatizer()
 
 
@@ -113,7 +113,8 @@ class InvertedIndex:
             start_time = time.time()
             self.readFiles(start, end)
             idx = open(f'index/index_{i}.txt', 'w')
-            idx.write(json.dumps(dict(sorted(self.index.items(), key=lambda t: t[0]))))
+            idx.write(json.dumps(
+                dict(sorted(self.index.items(), key=lambda t: t[0]))))
             idx.close()
             end_time = time.time()
             print("time taken to create sorted index:", end_time - start_time)
