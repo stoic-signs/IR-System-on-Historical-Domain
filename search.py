@@ -1,6 +1,5 @@
 from key_figures import figures
 from spell import main
-from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import sqlite3
 import re
@@ -286,8 +285,8 @@ def fetch(did=None):
             elif doc != row:
                 if score > rec_docs[doc]:
                     rec_docs[doc] = score
-    
-    rec_docs = dict(sorted(rec_docs.items(), key=lambda x:x[1], reverse=True))
+
+    rec_docs = dict(sorted(rec_docs.items(), key=lambda x: x[1], reverse=True))
     print(f"Similar Docs:\n\n")
     print(rec_docs)
     pretty_print_results(rec_docs)
